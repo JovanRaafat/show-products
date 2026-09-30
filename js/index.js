@@ -35,7 +35,6 @@ async function $getdata() {
 		let data = await res.json();
 		$display(data);
 	} catch (er) {
-		console.log(er.message);
 		$error(er);
 	}
 	$products.classList.remove("d-none");
