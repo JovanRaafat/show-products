@@ -24,7 +24,7 @@ function $display(result) {
 }
 
 async function $getdata() {
-	-$loading.classList.remove("d-none");
+	$loading.classList.remove("d-none");
 	$products.classList.add("d-none");
 	try {
 		let res = await fetch("https://dummyjson.com/products");
