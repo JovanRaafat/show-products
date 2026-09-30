@@ -1,6 +1,6 @@
-var $btn = document.querySelector("button");
-var $products = document.querySelector("section");
-var $loading = document.querySelector("#loading");
+let $btn = document.querySelector("button");
+let $products = document.querySelector("section");
+let $loading = document.querySelector("#loading");
 
 function $display(result) {
 	$products.innerHTML = "";
