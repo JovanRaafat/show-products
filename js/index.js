@@ -23,23 +23,18 @@ function $display(result) {
 	});
 }
 
-function $error(er) {
-	$products.innerHTML = `<p class=" fs-1 text-center" >${er.message}</p>`;
-}
-
 async function $getdata() {
-	$loading.classList.remove("d-none");
+	-$loading.classList.remove("d-none");
 	$products.classList.add("d-none");
 	try {
 		let res = await fetch("https://dummyjson.com/products");
 		let data = await res.json();
 		$display(data);
 	} catch (er) {
-		$error(er);
+		$products.innerHTML = `<p class=" fs-1 text-center" >${er.message}</p>`;
 	}
 	$products.classList.remove("d-none");
 	$loading.classList.add("d-none");
 }
-$btn.addEventListener("click", () => {
-	$getdata();
-});
+
+$btn.addEventListener("click", () => $getdata());
